@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MRCBaseLibrary_Example' do
+  pod 'MRCBaseLibrary', :path => '../'
+
+  target 'MRCBaseLibrary_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
