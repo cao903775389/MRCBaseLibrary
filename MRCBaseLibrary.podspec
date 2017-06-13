@@ -11,7 +11,7 @@ s.name             = 'MRCBaseLibrary'
 s.version          = '1.0.0'
 s.summary          = 'iOS基础组件.'
 s.description      = <<-DESC
-主要封装了iOS项目搭建所用到的基础组件,用于快速的构建一个项目
+用于组建一个完整的项目所进行的封装，包括组件化探索，基类控制器封装，MVVM+ReactiveSwift框架实践, 网络层封装，通知以及UserDefault命名参数化实践
 DESC
 
 s.homepage         = 'https://github.com/cao903775389/MRCBaseLibrary'
