@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  MRCBaseLibrary
+//  MRCBase
 //
-//  Created by cao903775389 on 06/07/2017.
+//  Created by cao903775389 on 05/27/2017.
 //  Copyright (c) 2017 cao903775389. All rights reserved.
 //
 
@@ -13,9 +13,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window!.backgroundColor = UIColor.white
+        let tabbar = MRCBaseNavigationViewController(rootViewController: TableViewController())
+        window?.rootViewController = tabbar
+        window?.makeKeyAndVisible()
+        
+        //userDefault
+        let r = UserDefaults.Account.value(forKey: .age)
+        print(r ?? 0)
+        
+        UserDefaults.Account.set(value: "123", forKey: .age)
+        
+        if UserDefaults.LoginStatus.value(forKey: .lastLoginTime) != nil {
+            UserDefaults.LoginStatus.removeValue(forKey: .lastLoginTime)
+        }
+        
+//        let t: UIInterfaceOrientation = [UIInterfaceOrientation.portrait, UIInterfaceOrientation.landscape]
+//        UIApplication.shared.setStatusBarOrientation(t, animated: true)
         return true
     }
 

@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint MRCBaseLibrary.podspec' to ensure this is a
+# Be sure to run `pod lib lint MRCBase.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,36 +7,40 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'MRCBaseLibrary'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of MRCBaseLibrary.'
+s.name             = 'MRCBaseLibrary'
+s.version          = '1.0.0'
+s.summary          = 'iOS基础组件.'
+s.description      = <<-DESC
+主要封装了iOS项目搭建所用到的基础组件,用于快速的构建一个项目
+DESC
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+s.homepage         = 'https://github.com/cao903775389/MRCBaseLibrary'
+s.license          = { :type => 'MIT', :file => 'LICENSE' }
+s.author           = { 'cao903775389' => '903775389@qq.com' }
+s.source           = { :git => 'https://github.com/cao903775389/MRCBaseLibrary.git', :tag => s.version.to_s }
+# s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+s.platform     = :ios
+s.ios.deployment_target = '8.0'
 
-  s.homepage         = 'https://github.com/cao903775389/MRCBaseLibrary'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'cao903775389' => '903775389@qq.com' }
-  s.source           = { :git => 'https://github.com/cao903775389/MRCBaseLibrary.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+s.source_files = 'MRCBaseLibrary/Classes/MRCBaseViewController/*', 'MRCBaseLibrary/Classes/MRCBaseViewModel/*', 'MRCBaseLibrary/Classes/MRCExtension/*', 'MRCBaseLibrary/Classes/MRCWrapper/*', 'MRCBaseLibrary/Classes/MRCBaseMediator/*'
 
-  s.ios.deployment_target = '8.0'
+s.resource_bundles = {
+'MRCBaseLibrary' => ['MRCBaseLibrary/Assets/*.png']
+}
 
-  s.source_files = 'MRCBaseLibrary/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'MRCBaseLibrary' => ['MRCBaseLibrary/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+# s.public_header_files = 'Pod/Classes/**/*.h'
+s.frameworks = 'UIKit', 'WebKit'
+s.dependency 'RTRootNavigationController', ' ~> 0.5.26'
+s.dependency 'NJKWebViewProgress', '~> 0.2.3'
+s.dependency 'WebViewJavascriptBridge', '5.0.7'
+s.dependency 'SVProgressHUD', '~> 2.1.2'
+s.dependency 'ReactiveCocoa', '~> 5.0.3'
+s.dependency 'Nimbus/Models', '~> 1.3.0'
+# s.dependency 'HandyJSON', '~> 1.7.1'
+s.dependency 'MJRefresh', '~> 3.1.12'
+s.dependency 'DZNEmptyDataSet', '~> 1.8.1'
+s.dependency 'OLNetwork', '~> 1.2'
+s.dependency 'SwiftyJSON', '~> 3.1.4'
+s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.6'
 end

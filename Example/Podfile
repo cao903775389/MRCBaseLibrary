@@ -1,11 +1,12 @@
 use_frameworks!
-
+inhibit_all_warnings!
 target 'MRCBaseLibrary_Example' do
   pod 'MRCBaseLibrary', :path => '../'
-
+  pod 'YYKit'
   target 'MRCBaseLibrary_Tests' do
     inherit! :search_paths
 
     pod 'FBSnapshotTestCase'
+    
   end
 end

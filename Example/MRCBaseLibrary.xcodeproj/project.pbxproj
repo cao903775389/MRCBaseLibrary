@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		1E9452DAE139AF067317DEB1 /* Pods_MRCBaseLibrary_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F7760FBACC39AC94C2A7E2 /* Pods_MRCBaseLibrary_Tests.framework */; };
-		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		7A01C1801EE7D3C1002442E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A01C1761EE7D3C1002442E6 /* AppDelegate.swift */; };
+		7A01C1811EE7D3C1002442E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A01C1771EE7D3C1002442E6 /* ViewController.swift */; };
+		7A01C1821EE7D3C1002442E6 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A01C1781EE7D3C1002442E6 /* MyViewModel.swift */; };
+		7A01C1831EE7D3C1002442E6 /* MRCBaseWebViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A01C1791EE7D3C1002442E6 /* MRCBaseWebViewExtension.swift */; };
+		7A01C1841EE7D3C1002442E6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A01C17A1EE7D3C1002442E6 /* WebViewController.swift */; };
+		7A01C1851EE7D3C1002442E6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A01C17B1EE7D3C1002442E6 /* TableViewController.swift */; };
+		7A01C1871EE7D3C1002442E6 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A01C17D1EE7D3C1002442E6 /* TestTableViewCell.xib */; };
+		7A01C1881EE7D3C1002442E6 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A01C17E1EE7D3C1002442E6 /* MyViewController.swift */; };
+		7A01C1891EE7D3C1002442E6 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A01C17F1EE7D3C1002442E6 /* MyViewController.xib */; };
+		7A01C18F1EE7F652002442E6 /* 750x480@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A01C18E1EE7F652002442E6 /* 750x480@2x.png */; };
+		7A1391E41EE801BB006771DA /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1391E31EE801BB006771DA /* TestTableViewCell.swift */; };
+		7A1391E61EE801F4006771DA /* CodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1391E51EE801F4006771DA /* CodeTableViewCell.swift */; };
+		7ADA227E1EEFCA8300B5901A /* MediatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADA227D1EEFCA8300B5901A /* MediatorExtension.swift */; };
+		7ADA22861EEFCF0B00B5901A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADA22841EEFCF0B00B5901A /* LoginViewController.swift */; };
+		7ADA22871EEFCF0B00B5901A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA22851EEFCF0B00B5901A /* LoginViewController.xib */; };
 		C6894FFE12980A360F5C2F34 /* Pods_MRCBaseLibrary_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8AFBAD5D384414FB94A1E2 /* Pods_MRCBaseLibrary_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,23 +41,36 @@
 
 /* Begin PBXFileReference section */
 		0BBB20B0DA33CDA2F4EA9D8A /* Pods-MRCBaseLibrary_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRCBaseLibrary_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRCBaseLibrary_Example/Pods-MRCBaseLibrary_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		41871BEF0B67E78986308F2F /* MRCBaseLibrary.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MRCBaseLibrary.podspec; path = ../MRCBaseLibrary.podspec; sourceTree = "<group>"; };
+		41871BEF0B67E78986308F2F /* MRCBaseLibrary.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MRCBaseLibrary.podspec; path = ../MRCBaseLibrary.podspec; sourceTree = "<group>"; };
 		4B8AFBAD5D384414FB94A1E2 /* Pods_MRCBaseLibrary_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRCBaseLibrary_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* MRCBaseLibrary_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRCBaseLibrary_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MRCBaseLibrary_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MRCBaseLibrary_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		69460667ED4D9507AA3214B1 /* Pods-MRCBaseLibrary_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRCBaseLibrary_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRCBaseLibrary_Tests/Pods-MRCBaseLibrary_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		7A01C1751EE7D3C0002442E6 /* MRCBaseLibrary_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MRCBaseLibrary_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		7A01C1761EE7D3C1002442E6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7A01C1771EE7D3C1002442E6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7A01C1781EE7D3C1002442E6 /* MyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
+		7A01C1791EE7D3C1002442E6 /* MRCBaseWebViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRCBaseWebViewExtension.swift; sourceTree = "<group>"; };
+		7A01C17A1EE7D3C1002442E6 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		7A01C17B1EE7D3C1002442E6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		7A01C17D1EE7D3C1002442E6 /* TestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
+		7A01C17E1EE7D3C1002442E6 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		7A01C17F1EE7D3C1002442E6 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		7A01C18E1EE7F652002442E6 /* 750x480@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "750x480@2x.png"; sourceTree = "<group>"; };
+		7A1391E31EE801BB006771DA /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		7A1391E51EE801F4006771DA /* CodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTableViewCell.swift; sourceTree = "<group>"; };
+		7ADA227D1EEFCA8300B5901A /* MediatorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediatorExtension.swift; sourceTree = "<group>"; };
+		7ADA22841EEFCF0B00B5901A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7ADA22851EEFCF0B00B5901A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		A869A24167764F841D67264B /* Pods-MRCBaseLibrary_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRCBaseLibrary_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRCBaseLibrary_Example/Pods-MRCBaseLibrary_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D6CAC2206F9B0993105AF9EE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D6CAC2206F9B0993105AF9EE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D9F7760FBACC39AC94C2A7E2 /* Pods_MRCBaseLibrary_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRCBaseLibrary_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEA282AE0E1A1712D715F7CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DEA282AE0E1A1712D715F7CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DEA4E7CFC920DE74613EA168 /* Pods-MRCBaseLibrary_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRCBaseLibrary_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRCBaseLibrary_Tests/Pods-MRCBaseLibrary_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,12 +118,25 @@
 		607FACD21AFB9204008FA782 /* Example for MRCBaseLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				7A01C1761EE7D3C1002442E6 /* AppDelegate.swift */,
+				7A01C1771EE7D3C1002442E6 /* ViewController.swift */,
+				7ADA227D1EEFCA8300B5901A /* MediatorExtension.swift */,
+				7A01C1781EE7D3C1002442E6 /* MyViewModel.swift */,
+				7A01C1791EE7D3C1002442E6 /* MRCBaseWebViewExtension.swift */,
+				7A01C17A1EE7D3C1002442E6 /* WebViewController.swift */,
+				7A1391E51EE801F4006771DA /* CodeTableViewCell.swift */,
+				7A1391E31EE801BB006771DA /* TestTableViewCell.swift */,
+				7A01C17B1EE7D3C1002442E6 /* TableViewController.swift */,
+				7ADA22841EEFCF0B00B5901A /* LoginViewController.swift */,
+				7ADA22851EEFCF0B00B5901A /* LoginViewController.xib */,
+				7A01C18E1EE7F652002442E6 /* 750x480@2x.png */,
+				7A01C17D1EE7D3C1002442E6 /* TestTableViewCell.xib */,
+				7A01C17E1EE7D3C1002442E6 /* MyViewController.swift */,
+				7A01C17F1EE7D3C1002442E6 /* MyViewController.xib */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				7A01C1751EE7D3C0002442E6 /* MRCBaseLibrary_Example-Bridging-Header.h */,
 			);
 			name = "Example for MRCBaseLibrary";
 			path = MRCBaseLibrary;
@@ -215,7 +253,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0830;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -248,8 +286,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				7A01C18F1EE7F652002442E6 /* 750x480@2x.png in Resources */,
+				7A01C1871EE7D3C1002442E6 /* TestTableViewCell.xib in Resources */,
+				7ADA22871EEFCF0B00B5901A /* LoginViewController.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				7A01C1891EE7D3C1002442E6 /* MyViewController.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,8 +402,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				7A01C1811EE7D3C1002442E6 /* ViewController.swift in Sources */,
+				7A01C1851EE7D3C1002442E6 /* TableViewController.swift in Sources */,
+				7ADA227E1EEFCA8300B5901A /* MediatorExtension.swift in Sources */,
+				7A01C1801EE7D3C1002442E6 /* AppDelegate.swift in Sources */,
+				7A1391E61EE801F4006771DA /* CodeTableViewCell.swift in Sources */,
+				7A01C1821EE7D3C1002442E6 /* MyViewModel.swift in Sources */,
+				7A01C1841EE7D3C1002442E6 /* WebViewController.swift in Sources */,
+				7A1391E41EE801BB006771DA /* TestTableViewCell.swift in Sources */,
+				7A01C1881EE7D3C1002442E6 /* MyViewController.swift in Sources */,
+				7A01C1831EE7D3C1002442E6 /* MRCBaseWebViewExtension.swift in Sources */,
+				7ADA22861EEFCF0B00B5901A /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,14 +435,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -496,11 +538,14 @@
 			baseConfigurationReference = 0BBB20B0DA33CDA2F4EA9D8A /* Pods-MRCBaseLibrary_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MRCBaseLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MRCBaseLibrary/MRCBaseLibrary_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -510,11 +555,13 @@
 			baseConfigurationReference = A869A24167764F841D67264B /* Pods-MRCBaseLibrary_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MRCBaseLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MRCBaseLibrary/MRCBaseLibrary_Example-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -523,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DEA4E7CFC920DE74613EA168 /* Pods-MRCBaseLibrary_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -543,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69460667ED4D9507AA3214B1 /* Pods-MRCBaseLibrary_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
