@@ -126,7 +126,7 @@ public final class  MRCMediator {
         print("执行了\(targetName)的\(actionName)方法")
         let module = target!.perform(action, with: params)
         
-        target?.MRCMediator_DidCreateModule(target: target, action: action, param: params, module: module)
+        target?.MRCMediator_DidCreateModule(target: target as Any, action: action, param: params, module: module as Any)
         
         guard let result = module else {
             complete?(nil)
