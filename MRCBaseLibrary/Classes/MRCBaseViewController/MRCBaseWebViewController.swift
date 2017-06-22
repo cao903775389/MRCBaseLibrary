@@ -10,7 +10,7 @@ import UIKit
 import NJKWebViewProgress
 import WebKit
 import SVProgressHUD
-
+import WebViewJavascriptBridge
 //页面加载进度
 private let KLoadingEstimatedProgressKVO = "estimatedProgress"
 
@@ -78,6 +78,13 @@ open class MRCBaseWebViewController: MRCBaseViewController, WKNavigationDelegate
             return _progressBarHeight
         }
     }
+    
+    //WebViewJavascriptBridge
+    public lazy var _webViewBridge: WKWebViewJavascriptBridge = {
+        let bridge = WKWebViewJavascriptBridge(for: self.webView)
+        bridge!.setWebViewDelegate(self)
+        return bridge!
+    }()
     
     //MARK: - Life Cycle
     deinit {

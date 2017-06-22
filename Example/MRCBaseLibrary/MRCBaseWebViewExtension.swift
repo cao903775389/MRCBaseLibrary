@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 //eg: 外部接口Bridge的方式通过Extension进行扩展
 extension MRCBaseWebViewControllerProtocol {
     var requestHttpHeaders: [String : String]? {
@@ -18,9 +19,7 @@ extension MRCBaseWebViewControllerProtocol {
 extension MRCBaseWebViewController: MRCJavascriptBridgeWrapper {
     //WebBridge
     public var webViewBridge: WKWebViewJavascriptBridge {
-        let bridge = WKWebViewJavascriptBridge(for: webView)
-        bridge!.setWebViewDelegate(self)
-        return bridge!
+        return _webViewBridge
     }
     
     ///交给子类扩展自定义实现
