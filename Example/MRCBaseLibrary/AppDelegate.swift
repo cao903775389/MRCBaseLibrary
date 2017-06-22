@@ -18,9 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.backgroundColor = UIColor.white
-        let tabbar = MRCBaseNavigationViewController(rootViewController: TableViewController())
-        window?.rootViewController = tabbar
+        
+        window?.rootViewController = HomePageViewController()
         window?.makeKeyAndVisible()
+        
         
         //userDefault
         let r = UserDefaults.Account.value(forKey: .age)

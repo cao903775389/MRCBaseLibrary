@@ -20,7 +20,6 @@ open class MRCBaseNavigationViewController: RTRootNavigationController {
         return self.topViewController?.shouldAutorotate ?? false
     }
     
-    
     //支持旋转的方向
     override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return self.topViewController?.supportedInterfaceOrientations ?? .portrait

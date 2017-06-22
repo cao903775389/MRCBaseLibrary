@@ -26,6 +26,8 @@
 		7ADA227E1EEFCA8300B5901A /* MediatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADA227D1EEFCA8300B5901A /* MediatorExtension.swift */; };
 		7ADA22861EEFCF0B00B5901A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADA22841EEFCF0B00B5901A /* LoginViewController.swift */; };
 		7ADA22871EEFCF0B00B5901A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ADA22851EEFCF0B00B5901A /* LoginViewController.xib */; };
+		7AF802AD1EFB7EB600BE8AAF /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF802AC1EFB7EB600BE8AAF /* HomePageViewController.swift */; };
+		7AF802B01EFB8B4600BE8AAF /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF802AE1EFB8B4600BE8AAF /* ADViewController.swift */; };
 		C6894FFE12980A360F5C2F34 /* Pods_MRCBaseLibrary_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8AFBAD5D384414FB94A1E2 /* Pods_MRCBaseLibrary_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		7ADA227D1EEFCA8300B5901A /* MediatorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediatorExtension.swift; sourceTree = "<group>"; };
 		7ADA22841EEFCF0B00B5901A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7ADA22851EEFCF0B00B5901A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		7AF802AC1EFB7EB600BE8AAF /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		7AF802AE1EFB8B4600BE8AAF /* ADViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		A869A24167764F841D67264B /* Pods-MRCBaseLibrary_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRCBaseLibrary_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRCBaseLibrary_Example/Pods-MRCBaseLibrary_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D6CAC2206F9B0993105AF9EE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D9F7760FBACC39AC94C2A7E2 /* Pods_MRCBaseLibrary_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRCBaseLibrary_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +124,8 @@
 			children = (
 				7A01C1761EE7D3C1002442E6 /* AppDelegate.swift */,
 				7A01C1771EE7D3C1002442E6 /* ViewController.swift */,
+				7AF802AE1EFB8B4600BE8AAF /* ADViewController.swift */,
+				7AF802AC1EFB7EB600BE8AAF /* HomePageViewController.swift */,
 				7ADA227D1EEFCA8300B5901A /* MediatorExtension.swift */,
 				7A01C1781EE7D3C1002442E6 /* MyViewModel.swift */,
 				7A01C1791EE7D3C1002442E6 /* MRCBaseWebViewExtension.swift */,
@@ -406,10 +412,12 @@
 				7A01C1851EE7D3C1002442E6 /* TableViewController.swift in Sources */,
 				7ADA227E1EEFCA8300B5901A /* MediatorExtension.swift in Sources */,
 				7A01C1801EE7D3C1002442E6 /* AppDelegate.swift in Sources */,
+				7AF802B01EFB8B4600BE8AAF /* ADViewController.swift in Sources */,
 				7A1391E61EE801F4006771DA /* CodeTableViewCell.swift in Sources */,
 				7A01C1821EE7D3C1002442E6 /* MyViewModel.swift in Sources */,
 				7A01C1841EE7D3C1002442E6 /* WebViewController.swift in Sources */,
 				7A1391E41EE801BB006771DA /* TestTableViewCell.swift in Sources */,
+				7AF802AD1EFB7EB600BE8AAF /* HomePageViewController.swift in Sources */,
 				7A01C1881EE7D3C1002442E6 /* MyViewController.swift in Sources */,
 				7A01C1831EE7D3C1002442E6 /* MRCBaseWebViewExtension.swift in Sources */,
 				7ADA22861EEFCF0B00B5901A /* LoginViewController.swift in Sources */,
