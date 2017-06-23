@@ -39,8 +39,8 @@ open class MRCBaseTableViewModel: MRCBaseViewModel {
     public var enableEmptyDataSet: Bool = true
     
     //RequestSignal
-    open lazy var requestAction: Action<Int, Any, NoError> = {
-        return Action<Int, Any, NoError> {[unowned self] page in
+    open lazy var requestAction: Action<Int, Any, HttpError> = {
+        return Action<Int, Any, HttpError> {[unowned self] page in
             return self.requestRemoteDataSignalWithPage(page: page)
                        .take(until: self.reactive.lifetime.ended)
                        .map { (value) -> [IndexPath] in
@@ -65,9 +65,9 @@ open class MRCBaseTableViewModel: MRCBaseViewModel {
     }
     
     //MARK: - Public Method
-    open func requestRemoteDataSignalWithPage(page: Int) -> SignalProducer<Any, NoError> {
+    open func requestRemoteDataSignalWithPage(page: Int) -> SignalProducer<Any, HttpError> {
         //for subclass overload
-       return SignalProducer<Any, NoError>.empty
+       return SignalProducer<Any, HttpError>.empty
     }
 }
 

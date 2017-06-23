@@ -8,7 +8,24 @@
 
 import Foundation
 
+//Http RequestError
+public enum HttpError: Error {
+    case success
+    case fail(String)
+}
+
 open class MRCBaseService {
  
-    public init() { }
+    public override init() { }
+    
+    deinit {
+        self.serviceRelease()
+        print("\(self)服务请求已释放")
+    }
+    
+    //MARK: - Service Release
+    open func serviceRelease() {
+        // for subclass over load
+        
+    }
 }

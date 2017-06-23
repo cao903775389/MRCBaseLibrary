@@ -90,7 +90,7 @@ class TestTableViewModel: MRCBaseTableViewModel {
         return TestService()
     }()
     
-    override func requestRemoteDataSignalWithPage(page: Int) -> SignalProducer<Any, NoError> {
+    override func requestRemoteDataSignalWithPage(page: Int) -> SignalProducer<Any, HttpError> {
         
         return service.requestRemoteData(page: page)
     }
@@ -98,19 +98,16 @@ class TestTableViewModel: MRCBaseTableViewModel {
 
 class TestService: MRCBaseService, OLHttpRequestDelegate {
     
-    private var innerObserver: Observer<Any, NoError>?
+    private var innerObserver: Observer<Any, HttpError>?
     
-    deinit {
-        print("\(self)服务已释放")
-    }
     
-    func requestRemoteData(page: Int) -> SignalProducer<Any, NoError> {
-        let (signalProducer, observer) = SignalProducer<Any, NoError>.pipe()
+    
+    func requestRemoteData(page: Int) -> SignalProducer<Any, HttpError> {
+        let (signalProducer, observer) = SignalProducer<Any, HttpError>.pipe()
         self.innerObserver = observer
         self.networkRequest(page: page)
         return signalProducer
     }
-    
     
     private func networkRequest(page: Int) {
         let param: [String: Any] = ["rd": OLCode.OL_TrialList.rawValue, "ie": page]
@@ -118,6 +115,7 @@ class TestService: MRCBaseService, OLHttpRequestDelegate {
         let trialListRequest = BeautyMAPIHttpRequest(delegate: self, requestMethod: OLHttpMethod.GET, requestUrl: MAPIURL.V130.rawValue, requestArgument: param, OL_CODE: OLCode.OL_TrialList)
         
         OLHttpRequestManager.sharedOLHttpRequestManager.sendHttpRequest(request: trialListRequest)
+        
     }
     
     func ol_requestFinished(request: OLHttpRequest) {
