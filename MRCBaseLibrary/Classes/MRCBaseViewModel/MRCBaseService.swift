@@ -16,7 +16,7 @@ public enum HttpError: Error {
 
 open class MRCBaseService {
  
-    public override init() { }
+    public init() { }
     
     deinit {
         self.serviceRelease()
