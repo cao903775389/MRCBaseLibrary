@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'MRCBaseLibrary'
-s.version          = '1.0.2'
+s.version          = '1.0.3'
 s.summary          = 'iOS基础组件.'
 s.description      = <<-DESC
     用于组建一个完整的项目所进行的封装，包括组件化探索，基类控制器封装，MVVM+ReactiveSwift框架实践, 网络层封装，通知以及UserDefault命名参数化实践
@@ -37,7 +37,7 @@ s.dependency 'WebViewJavascriptBridge', '5.0.7'
 s.dependency 'SVProgressHUD', '~> 2.1.2'
 s.dependency 'ReactiveCocoa', '~> 5.0.3'
 s.dependency 'Nimbus/Models', '~> 1.3.0'
-s.dependency 'MJRefresh', '~> 3.1.12'
+s.dependency 'MJRefresh', '~> 3.1.15.3'
 s.dependency 'DZNEmptyDataSet', '~> 1.8.1'
 s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.6'
 end

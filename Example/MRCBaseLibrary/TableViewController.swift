@@ -169,7 +169,6 @@ class TrialListItemModel: MRCNibCellObject {
     var tstu:Int!
     
     required init(anyObject: JSON) {
-        super.init(cellClass: <#T##AnyClass#>)
         super.init(cellClass: UINib(nibName: "TestTableViewCell", bundle: nil))
         tryid = anyObject["tryid"].intValue
         tt = anyObject["tt"].stringValue

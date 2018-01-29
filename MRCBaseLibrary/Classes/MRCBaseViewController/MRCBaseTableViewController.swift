@@ -134,7 +134,6 @@ open class MRCBaseTableViewController: MRCBaseViewController, UITableViewDelegat
         }
         if (viewModel as! MRCBaseTableViewModel).pullupToLoadingMore {
             let footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(MRCBaseTableViewController.beginLoadingMore))!
-            footer.isAutomaticallyHidden = true
             
             footer.setTitle(MJFooterRefreshingText, for: MJRefreshState.refreshing)
             footer.setTitle(MJFooterNoMoreDataText, for: MJRefreshState.noMoreData)
