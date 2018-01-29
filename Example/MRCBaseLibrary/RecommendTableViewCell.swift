@@ -153,7 +153,7 @@ class RecommendModel: MRCNibCellObject {
     
     //over load
     required init(anyObject: JSON) {
-        super.init(cellNib: UINib(nibName: "RecommendTableViewCell", bundle: nil))
+        super.init(cellClass: UINib(nibName: "RecommendTableViewCell", bundle: nil))
         type = anyObject["type"].stringValue
         id   = anyObject["id"].stringValue
         tt   = anyObject["tt"].stringValue
