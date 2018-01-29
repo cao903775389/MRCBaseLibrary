@@ -12,10 +12,18 @@ import Foundation
 public enum HttpError: Error {
     case success
     case fail(String)
+    public var error: String? {
+        switch self {
+        case .fail(let reason):
+            return reason
+        default:
+            return nil
+        }
+    }
 }
 
 open class MRCBaseService {
- 
+    
     public init() { }
     
     deinit {

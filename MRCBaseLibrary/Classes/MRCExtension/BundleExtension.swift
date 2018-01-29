@@ -18,6 +18,6 @@ extension Bundle {
     public class func MRC_LibraryBundleURL() -> URL? {
         let bundle = Bundle(for: MRCBaseViewModel.self)
         
-        return bundle.url(forResource: "MRCBaseLibrary", withExtension: "bundle")
+        return bundle.url(forResource: "OLBaseLibrary", withExtension: "bundle")
     }
 }

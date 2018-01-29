@@ -124,7 +124,7 @@ extension MRCBaseViewControllerProtocol {
 //默认配置
 extension MRCBaseViewController: MRCBaseViewControllerProtocol {
     
-    public func popViewController() {
+    open func popViewController() {
         self.navigationController?.popViewController(animated: true)
     }
     

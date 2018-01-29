@@ -21,6 +21,8 @@
 		7A01C1881EE7D3C1002442E6 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A01C17E1EE7D3C1002442E6 /* MyViewController.swift */; };
 		7A01C1891EE7D3C1002442E6 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A01C17F1EE7D3C1002442E6 /* MyViewController.xib */; };
 		7A01C18F1EE7F652002442E6 /* 750x480@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A01C18E1EE7F652002442E6 /* 750x480@2x.png */; };
+		7A0B8EF61F15CF070044C7AA /* RecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0B8EF41F15CF070044C7AA /* RecommendTableViewCell.swift */; };
+		7A0B8EF71F15CF070044C7AA /* RecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0B8EF51F15CF070044C7AA /* RecommendTableViewCell.xib */; };
 		7A1391E41EE801BB006771DA /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1391E31EE801BB006771DA /* TestTableViewCell.swift */; };
 		7A1391E61EE801F4006771DA /* CodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1391E51EE801F4006771DA /* CodeTableViewCell.swift */; };
 		7ADA227E1EEFCA8300B5901A /* MediatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADA227D1EEFCA8300B5901A /* MediatorExtension.swift */; };
@@ -64,6 +66,8 @@
 		7A01C17E1EE7D3C1002442E6 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		7A01C17F1EE7D3C1002442E6 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
 		7A01C18E1EE7F652002442E6 /* 750x480@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "750x480@2x.png"; sourceTree = "<group>"; };
+		7A0B8EF41F15CF070044C7AA /* RecommendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendTableViewCell.swift; sourceTree = "<group>"; };
+		7A0B8EF51F15CF070044C7AA /* RecommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendTableViewCell.xib; sourceTree = "<group>"; };
 		7A1391E31EE801BB006771DA /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		7A1391E51EE801F4006771DA /* CodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTableViewCell.swift; sourceTree = "<group>"; };
 		7ADA227D1EEFCA8300B5901A /* MediatorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediatorExtension.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		607FACD21AFB9204008FA782 /* Example for MRCBaseLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				7A0B8EF41F15CF070044C7AA /* RecommendTableViewCell.swift */,
+				7A0B8EF51F15CF070044C7AA /* RecommendTableViewCell.xib */,
 				7A01C1761EE7D3C1002442E6 /* AppDelegate.swift */,
 				7A01C1771EE7D3C1002442E6 /* ViewController.swift */,
 				7AF802AE1EFB8B4600BE8AAF /* ADViewController.swift */,
@@ -296,6 +302,7 @@
 				7A01C1871EE7D3C1002442E6 /* TestTableViewCell.xib in Resources */,
 				7ADA22871EEFCF0B00B5901A /* LoginViewController.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				7A0B8EF71F15CF070044C7AA /* RecommendTableViewCell.xib in Resources */,
 				7A01C1891EE7D3C1002442E6 /* MyViewController.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -317,9 +324,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MRCBaseLibrary_Tests/Pods-MRCBaseLibrary_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -332,9 +342,44 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MRCBaseLibrary_Example/Pods-MRCBaseLibrary_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MRCBaseLibrary/MRCBaseLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/NJKWebViewProgress/NJKWebViewProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/NSString+TBEncryption/NSString_TBEncryption.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimbus/Nimbus.framework",
+				"${BUILT_PRODUCTS_DIR}/OLNetwork/OLNetwork.framework",
+				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRCBaseLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NJKWebViewProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSString_TBEncryption.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimbus.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OLNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -362,13 +407,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MRCBaseLibrary_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C2D24753FB13841537907D64 /* [CP] Check Pods Manifest.lock */ = {
@@ -377,13 +425,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MRCBaseLibrary_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE5996AAB47495F1A4F3DD2E /* [CP] Copy Pods Resources */ = {
@@ -416,6 +467,7 @@
 				7A1391E61EE801F4006771DA /* CodeTableViewCell.swift in Sources */,
 				7A01C1821EE7D3C1002442E6 /* MyViewModel.swift in Sources */,
 				7A01C1841EE7D3C1002442E6 /* WebViewController.swift in Sources */,
+				7A0B8EF61F15CF070044C7AA /* RecommendTableViewCell.swift in Sources */,
 				7A1391E41EE801BB006771DA /* TestTableViewCell.swift in Sources */,
 				7AF802AD1EFB7EB600BE8AAF /* HomePageViewController.swift in Sources */,
 				7A01C1881EE7D3C1002442E6 /* MyViewController.swift in Sources */,

@@ -13,12 +13,7 @@ import MJRefresh
 import ReactiveSwift
 import ReactiveCocoa
 import UITableView_FDTemplateLayoutCell
-//没有更多数据
-private let NoMoreDataText = "没有更多内容"
-//上拉刷新
-private let MJFooterIdleText = "上拉加载"
-//加载中
-private let MJFooterRefreshingText = "正在加载..."
+import SVProgressHUD
 
 open class MRCBaseTableViewController: MRCBaseViewController, UITableViewDelegate, NIMutableTableViewModelDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
@@ -27,52 +22,98 @@ open class MRCBaseTableViewController: MRCBaseViewController, UITableViewDelegat
         return UIEdgeInsetsMake(64, 0, 0, 0)
     }
     
+    //没有更多数据
+    public var MJFooterNoMoreDataText: String = "没有更多内容"
+    
+    //上拉刷新
+    public var MJFooterIdleText: String = "上拉加载"
+
+    //加载中
+    public var MJFooterRefreshingText: String = "正在加载..."
+    
     //tableView
     private lazy var _tableView: UITableView = {
         let table = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
         table.separatorStyle = UITableViewCellSeparatorStyle.none
         return table
     }()
-    
+        
     public var tableView: UITableView {
         return _tableView
     }
     
     //cellFactory
-    private lazy var cellFactory: NICellFactory = {
-       return NICellFactory()
+    public lazy var cellFactory: MRCCellFactory = {
+       return MRCCellFactory()
     }()
     
+    //MARK: - Life Cycle
     override open func viewDidLoad() {
         super.viewDidLoad()
         //初始化配置
         setUp()
+        //注册cell
+        registerCellForReusable()
     }
     
     //MARK: - Public Method
-    public func beiginRefresh() {
+    open func beiginRefresh() {
         //for subclass over load
        (viewModel as! MRCBaseTableViewModel).requestAction.apply(1)
-                                                .start({[weak self] (event) in
-                                                    guard !event.isTerminating else { return }
-                                                    guard self != nil, let _ = event.value as? [IndexPath] else { return }
-                                                    self!.tableView.mj_header.endRefreshing()
-                                                    self!.tableView.reloadData()
-                                                })
+                                                .start {[weak self] (event) in
+                                                    guard self != nil else { return }
+                                                    switch event {
+                                                    case .completed, .interrupted:
+                                                        break
+                                                    case .failed(let error):
+                                                        self!.tableView.mj_header?.endRefreshing()
+                                                        switch error {
+                                                        case .producerFailed(let httpError):
+                                                            SVProgressHUD.showError(withStatus: httpError.error!)
+                                                        default:
+                                                            break
+                                                        }
+                                                        break
+                                                    case .value(let value):
+                                                        guard self != nil, let _ = value as? [IndexPath] else { return }
+                                                        self!.tableView.mj_header?.endRefreshing()
+                                                        self!.tableView.reloadData()
+                                                        break
+                                                    }
+                                                }
     }
     
-    public func beginLoadingMore() {
+    open func beginLoadingMore() {
         //for subclass over load
         let page = (self.viewModel as! MRCBaseTableViewModel).page + 1
         (viewModel as! MRCBaseTableViewModel).requestAction.apply(page)
-                                            .start({[weak self] (event) in
-                                                guard !event.isTerminating else { return }
-                                                guard self != nil, let result = event.value as? [IndexPath] else { return }
-                                                self!.tableView.mj_footer.endRefreshing()
-                                                self!.tableView.beginUpdates()
-                                                self!.tableView.insertRows(at: result, with: .fade)
-                                                self!.tableView.endUpdates()
-                                            })
+                                            .start {[weak self] (event) in
+                                                guard self != nil else { return }
+                                                switch event {
+                                                case .completed, .interrupted:
+                                                    break
+                                                case .failed(let error):
+                                                    
+                                                    self!.tableView.mj_footer?.endRefreshing()
+                                                    switch error {
+                                                    case .producerFailed(let httpError):
+                                                        SVProgressHUD.showError(withStatus: httpError.error!)
+                                                    default:
+                                                        break
+                                                    }
+                                                    break
+                                                case .value(let value):
+                                                    guard let result = value as? [IndexPath] else { return }
+                                                    self!.tableView.mj_footer?.endRefreshing()
+                                                    if result.count == 0 {
+                                                        self!.tableView.mj_footer?.endRefreshingWithNoMoreData()
+                                                    }
+                                                    self!.tableView.beginUpdates()
+                                                    self!.tableView.insertRows(at: result, with: .fade)
+                                                    self!.tableView.endUpdates()
+                                                    break
+                                                }
+                                            }
     }
     
     //MARK: - Private Method
@@ -89,13 +130,14 @@ open class MRCBaseTableViewController: MRCBaseViewController, UITableViewDelegat
         //配置刷新控件
         if (viewModel as! MRCBaseTableViewModel).pulldownToRefresh {
             tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(MRCBaseTableViewController.beiginRefresh))
+            tableView.mj_header.beginRefreshing()
         }
         if (viewModel as! MRCBaseTableViewModel).pullupToLoadingMore {
             let footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(MRCBaseTableViewController.beginLoadingMore))!
             footer.isAutomaticallyHidden = true
             
             footer.setTitle(MJFooterRefreshingText, for: MJRefreshState.refreshing)
-            footer.setTitle(NoMoreDataText, for: MJRefreshState.noMoreData)
+            footer.setTitle(MJFooterNoMoreDataText, for: MJRefreshState.noMoreData)
             
             footer.setTitle(MJFooterIdleText, for: MJRefreshState.idle)
             footer.stateLabel.font = UIFont.systemFont(ofSize: 15)
@@ -118,11 +160,16 @@ open class MRCBaseTableViewController: MRCBaseViewController, UITableViewDelegat
     open override func bindViewModel() {
         super.bindViewModel()
     }
-        
+    
+    //需要注册的cell
+    open func registerCellForReusable() {
+        //for subclass over load
+    }
+    
     //MARK: - NIMutableTableViewModelDelegate
-    public func tableViewModel(_ tableViewModel: NITableViewModel!, cellFor tableView: UITableView!, at indexPath: IndexPath!, with object: Any!) -> UITableViewCell! {
+    open func tableViewModel(_ tableViewModel: NITableViewModel!, cellFor tableView: UITableView!, at indexPath: IndexPath!, with object: Any!) -> UITableViewCell! {
         
-        let cell = NICellFactory.tableViewModel(tableViewModel, cellFor: tableView, at: indexPath, with: object)
+        let cell = cellFactory.tableViewModel(tableViewModel, cellFor: tableView, at: indexPath, with: object)
         if (nil == cell) {
             // Custom cell creation here.
         }
@@ -133,17 +180,8 @@ open class MRCBaseTableViewController: MRCBaseViewController, UITableViewDelegat
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let object = (viewModel as! MRCBaseTableViewModel).tableViewModel.object(at: indexPath)
-        var identifier: String = ""
+        let identifier: String = cellFactory.cellIdentifierFromObject(object: object!)
         
-        if let cellObject = object as? MRCNibCellObject {
-            //nib cell
-            identifier = NSStringFromClass(type(of: object as AnyObject))
-            tableView.register(cellObject.cellNib(), forCellReuseIdentifier: identifier)
-        }else if let cellObject = object as? MRCCellObject {
-            //code cell
-            identifier = NSStringFromClass(cellObject.cellClass())
-            tableView.register(cellObject.cellClass(), forCellReuseIdentifier: identifier)
-        }
         return tableView.fd_heightForCell(withIdentifier: identifier, cacheBy: indexPath) { (cell) in
             (cell as! NICell).shouldUpdate(with: object)
         }
@@ -152,7 +190,6 @@ open class MRCBaseTableViewController: MRCBaseViewController, UITableViewDelegat
     //MARK: - DZNEmptyDataSetSource
     // 设置背景图片
     open func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-        
         return nil
     }
     // 设置背景色
@@ -182,7 +219,7 @@ open class MRCBaseTableViewController: MRCBaseViewController, UITableViewDelegat
         return ((viewModel as! MRCBaseTableViewModel).dataSource.value as AnyObject).count <= 0
     }
     
-    public func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+    open func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
         return true
     }
 }
@@ -195,6 +232,9 @@ public protocol MRCBaseTableViewControllerProtocol: class {
     
     //配置tableView
     var tableView: UITableView { get }
+    
+    //注册cell
+    func registerCellForReusable()
 }
 
 extension MRCBaseTableViewController: MRCBaseTableViewControllerProtocol { }

@@ -11,6 +11,7 @@ import NJKWebViewProgress
 import WebKit
 import SVProgressHUD
 import WebViewJavascriptBridge
+
 //页面加载进度
 private let KLoadingEstimatedProgressKVO = "estimatedProgress"
 
@@ -19,6 +20,16 @@ open class MRCBaseWebViewController: MRCBaseViewController, WKNavigationDelegate
     //默认支持旋转
     open override var shouldAutorotate: Bool {
         return true
+    }
+    
+    //加载类型
+    open var requestType: WebRequestType {
+        return .url
+    }
+    
+    //是否禁用复制粘贴
+    open var enableInteraction: Bool {
+        return false
     }
     
     //默认支持分享
@@ -196,7 +207,7 @@ open class MRCBaseWebViewController: MRCBaseViewController, WKNavigationDelegate
         //当导航栏隐藏时不添加进度条
         let hidden = self.navigationController?.isNavigationBarHidden ?? true
         
-        let navigationBarSize = self.navigationController!.navigationBar.bounds.size
+        let navigationBarSize = self.navigationController?.navigationBar.bounds.size ?? CGSize(width: self.view.frame.width, height: 64)
         let progressViewFrame  = CGRect(x: 0, y: hidden ? 0 : (navigationBarSize.height - progressBarHeight), width: navigationBarSize.width, height: progressBarHeight)
         webProgressView.frame = progressViewFrame
         webProgressView.progress = 0.0
@@ -256,15 +267,7 @@ extension MRCBaseWebViewControllerProtocol {
 //外部通过Extension的方式进行扩展添加自定义参数
 extension MRCBaseWebViewController: MRCBaseWebViewControllerProtocol {
     
-    open var requestType: WebRequestType {
-        return .url
-    }
-    
     public var webViewController: MRCBaseWebViewController {
         return self
-    }
-    
-    open var enableInteraction: Bool {
-        return false
     }
 }

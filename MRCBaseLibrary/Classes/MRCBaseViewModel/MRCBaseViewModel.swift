@@ -14,11 +14,11 @@ open class MRCBaseViewModel: NSObject {
     
     public required init(params: [String: Any]? = nil) {
         param = params
-        title = Property(value: (params?["title"] as? String) ?? "")
+        title = MutableProperty((params?["title"] as? String) ?? "")
     }
     
     //导航栏标题
-    public var title: Property<String>
+    public var title: MutableProperty<String>
     
     //界面将要消失
     deinit {
@@ -32,7 +32,7 @@ open class MRCBaseViewModel: NSObject {
 public protocol MRCViewModel: class {
     
     //导航栏标题
-    var title: Property<String> { set get }
+    var title: MutableProperty<String> { set get }
     
     //初始化方法
     init(params: [String: Any]?)
