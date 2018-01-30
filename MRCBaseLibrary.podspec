@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'MRCBaseLibrary'
-s.version          = '1.0.3'
+s.version          = '1.0.4'
 s.summary          = 'iOS基础组件.'
 s.description      = <<-DESC
     用于组建一个完整的项目所进行的封装，包括组件化探索，基类控制器封装，MVVM+ReactiveSwift框架实践, 网络层封装，通知以及UserDefault命名参数化实践
